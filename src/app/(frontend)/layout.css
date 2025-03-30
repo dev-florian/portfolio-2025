@@ -1,0 +1,150 @@
+
+body {
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #111;
+
+  header{
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  &:before, &:after {
+    content: "";
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    z-index: -1;
+    opacity: .1;
+  }
+
+  &:before {
+    left: 66.666%;
+  }
+
+  &:after {
+    left: 33.333%;
+  }
+}
+
+.noises {
+  pointer-events: none;
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .6;
+  visibility: visible;
+  z-index: -1;
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+  10% {
+    transform: translate(-5%, -5%)
+  }
+  20% {
+    transform: translate(-10%, 5%)
+  }
+  30% {
+    transform: translate(5%, -10%)
+  }
+  40% {
+    transform: translate(-5%, 15%)
+  }
+  50% {
+    transform: translate(-10%, 5%)
+  }
+  60% {
+    transform: translate(15%, 0)
+  }
+  70% {
+    transform: translate(0, 10%)
+  }
+  80% {
+    transform: translate(-15%, 0)
+  }
+  90% {
+    transform: translate(10%, 5%)
+  }
+  100% {
+    transform: translate(5%, 0)
+  }
+}
+
+header{
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.titleheader{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title .content{
+    font-size: 7vw;
+    line-height: 7vw;
+
+    p{
+      margin: 0;
+    }
+  }
+}
+
+.spline-wrapper {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.scroll-down-btn{
+  position: relative;
+  width: max-content;
+
+  &:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 15a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 12.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4A1 1 0 0 1 12 15z' style='fill:%23ffffff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+  }
+
+  svg {
+    height: auto;
+    width: 70px;
+    overflow: visible;
+
+    path {
+      transition: opacity 0.2s;
+    }
+
+    #text{
+      font-size: 18px;
+    }
+  }
+
+
+}

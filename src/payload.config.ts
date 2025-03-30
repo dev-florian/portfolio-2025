@@ -14,23 +14,15 @@ import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
-import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import {
   BlocksFeature,
-  LinkFeature,
-  UploadFeature,
-  BoldFeature,
-  ItalicFeature,
-  UnderlineFeature,
-  StrikethroughFeature,
-  AlignFeature,
-  UnorderedListFeature,
-  ParagraphFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { Banner } from './blocks/Banner/config'
 import { Code } from './blocks/Code/config'
+import { TitleHeader } from '@/blocks/TitleHeader/config'
+import { RelatedPosts } from './blocks/RelatedPosts/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -81,77 +73,9 @@ export default buildConfig({
   collections: [Pages, Posts, Media, Categories, Users],
   editor: lexicalEditor({
     features: ({ defaultFeatures, rootFeatures }) => [
-      ...rootFeatures,
-      LinkFeature({
-        // Example showing how to customize the built-in fields
-        // of the Link feature
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-          {
-            name: 'rel',
-            label: 'Rel Attribute',
-            type: 'select',
-            hasMany: true,
-            options: ['noopener', 'noreferrer', 'nofollow'],
-            admin: {
-              description:
-                'The rel attribute defines the relationship between a linked resource and the current document. This is a custom link field.',
-            },
-          },
-        ],
-      }),
-      UploadFeature({
-        collections: {
-          uploads: {
-            // Example showing how to customize the built-in fields
-            // of the Upload feature
-            fields: [
-              {
-                name: 'caption',
-                type: 'richText',
-                editor: lexicalEditor(),
-              },
-            ],
-          },
-        },
-      }),
-      BoldFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      ItalicFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      UnderlineFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      StrikethroughFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      AlignFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      UnorderedListFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
-      ParagraphFeature({
-        fields: ({ defaultFields }) => [
-          ...defaultFields,
-        ],
-      }),
+      ...defaultFeatures,
       BlocksFeature({
-        blocks: [Banner, Code],
+        blocks: [Banner, Code, TitleHeader, RelatedPosts],
       }),
     ],
   }),

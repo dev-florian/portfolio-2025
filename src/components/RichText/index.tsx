@@ -12,9 +12,13 @@ import {
 } from '@payloadcms/richtext-lexical/react'
 
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
+import { TitleHeaderBlock } from '@/blocks/TitleHeader/Component'
+import { RelatedPostsBlock } from '@/blocks/RelatedPosts/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
+  TitleHeaderBlock as TitleHeaderBlockProps,
+  RelatedPostsBlock as RelatedPostsBlockProps,
   CallToActionBlock as CTABlockProps,
   MediaBlock as MediaBlockProps,
 } from '@/payload-types'
@@ -24,7 +28,7 @@ import { cn } from '@/utilities/ui'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<CTABlockProps | MediaBlockProps | BannerBlockProps | CodeBlockProps>
+  | SerializedBlockNode<CTABlockProps | MediaBlockProps | BannerBlockProps | CodeBlockProps  | TitleHeaderBlockProps | RelatedPostsBlockProps>
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
   const { value, relationTo } = linkNode.fields.doc!
@@ -51,7 +55,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
       />
     ),
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
+    titleHeader: ({ node }) => <TitleHeaderBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
+    relatedPosts: ({ node }) => <RelatedPostsBlock {...node.fields} />,
   },
 })
 
@@ -63,6 +69,7 @@ type Props = {
 
 export default function RichText(props: Props) {
   const { className, enableProse = true, enableGutter = true, ...rest } = props
+
   return (
     <ConvertRichText
       converters={jsxConverters}
