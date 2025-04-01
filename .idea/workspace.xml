@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0d27136-eb60-49ab-b293-4b8d1488d1e8" name="Changes" comment="" />
+    <list default="true" id="f0d27136-eb60-49ab-b293-4b8d1488d1e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/blocks/ArchiveBlock/template/Teaser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(frontend)/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(frontend)/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/ArchiveBlock/Component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/ArchiveBlock/Component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/ArchiveBlock/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/ArchiveBlock/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/TitleHeader/Component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/TitleHeader/Component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\wamp64\bin\php\php8.1.0\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.1.0\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -29,7 +39,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/portfolio-2025",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/wamp64/www/portfolio-2025/src/blocks/ArchiveBlock/template",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -38,17 +49,17 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\portfolio-2025\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\wamp64\\www\\portfolio-2025\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\portfolio-2025\src\blocks\ArchiveBlock\template" />
+      <recent name="C:\wamp64\www\portfolio-2025" />
       <recent name="D:\portfolio-2025\public\spline" />
       <recent name="D:\portfolio-2025\public" />
       <recent name="D:\portfolio-2025\src\blocks\TitleHeader" />
-      <recent name="D:\portfolio-2025\src\blocks\RelatedPosts" />
-      <recent name="D:\portfolio-2025\src\blocks\RelationShip" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\portfolio-2025\public\spline" />
@@ -59,8 +70,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
-        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.19072.22" />
+        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.19072.22" />
       </set>
     </attachedChunks>
   </component>
@@ -80,6 +91,7 @@
       <workItem from="1743335553486" duration="6876000" />
       <workItem from="1743355207880" duration="2725000" />
       <workItem from="1743360192064" duration="449000" />
+      <workItem from="1743503300255" duration="3100000" />
     </task>
     <servers />
   </component>

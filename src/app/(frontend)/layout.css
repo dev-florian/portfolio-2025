@@ -116,7 +116,9 @@ header{
 }
 
 .scroll-down-btn{
-  position: relative;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
   width: max-content;
 
   &:after{

@@ -507,6 +507,7 @@ export interface MediaBlock {
  * via the `definition` "ArchiveBlock".
  */
 export interface ArchiveBlock {
+  template: 'teaser' | 'listing';
   introContent?: {
     root: {
       type: string;
@@ -1156,6 +1157,7 @@ export interface MediaBlockSelect<T extends boolean = true> {
  * via the `definition` "ArchiveBlock_select".
  */
 export interface ArchiveBlockSelect<T extends boolean = true> {
+  template?: T;
   introContent?: T;
   populateBy?: T;
   relationTo?: T;

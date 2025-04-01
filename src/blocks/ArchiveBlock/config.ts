@@ -12,6 +12,16 @@ export const Archive: Block = {
   interfaceName: 'ArchiveBlock',
   fields: [
     {
+      name: 'template',
+      type: 'select',
+      defaultValue: 'info',
+      options: [
+        { label: 'teaser', value: 'teaser' },
+        { label: 'listing', value: 'listing' },
+      ],
+      required: true,
+    },
+    {
       name: 'introContent',
       type: 'richText',
       editor: lexicalEditor({

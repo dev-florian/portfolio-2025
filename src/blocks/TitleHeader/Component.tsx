@@ -2,9 +2,9 @@
 
 import type {TitleHeaderBlock as TitleHeaderBlockProps} from 'src/payload-types'
 
-import { motion, animate, stagger } from 'framer-motion';
+import { motion, animate, stagger, AnimatePresence } from 'framer-motion';
 import { splitText } from "motion-plus-dom"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Spline from '@splinetool/react-spline';
 
 import RichText from "@/components/RichText";
@@ -15,11 +15,18 @@ type Props = {
 export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }) => {
 
   const transition = { duration: 3, yoyo: Infinity, ease: "easeInOut" }
+  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
 
+    window.addEventListener('scroll', e => {
+      window.scrollY < 50 ? setIsVisible(true) : setIsVisible(false)
+    })
+
     const containerRefs = document.querySelectorAll('.titleheader .title p')
     containerRefs.forEach(containerRef => {
+
+
 
       if (!containerRef) return
 
@@ -70,19 +77,30 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
       />
       </div>
 
-      <div className="scroll-down-btn mt-20">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={transition}
-            id="circlePath" fill="none" stroke="#ffffff" d="
+
+        {isVisible ? (
+          <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            key="scroll-btn">
+            <div>
+              <div className="scroll-down-btn">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <motion.path
+                    initial={{pathLength: 0}}
+                    animate={{pathLength: 1}}
+                    transition={transition}
+                    id="circlePath" fill="none" stroke="#ffffff" d="
           M 10, 50
           a 40,40 0 1,1 80,0
           a 40,40 0 1,1 -80,0
         "/>
-        </svg>
-      </div>
+                </svg>
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
     </div>
   )
 }
