@@ -76,8 +76,7 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
       <Spline scene="/spline/smartphone.splinecode"
       />
       </div>
-
-
+      
         {isVisible ? (
           <motion.div
             initial={{opacity: 0}}
