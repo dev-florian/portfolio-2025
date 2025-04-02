@@ -18,7 +18,11 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
   const [isVisible, setIsVisible] = useState(true)
 
   window.addEventListener('scroll', e => {
-    window.scrollY < 50 ? setIsVisible(true) : setIsVisible(false)
+    if (window.scrollY < 50) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
   })
 
   useEffect(() => {
