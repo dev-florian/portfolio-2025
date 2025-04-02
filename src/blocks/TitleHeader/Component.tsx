@@ -17,15 +17,14 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
   const transition = { duration: 3, yoyo: Infinity, ease: "easeInOut" }
   const [isVisible, setIsVisible] = useState(true)
 
-  useEffect(() => {
+  window.addEventListener('scroll', e => {
+    window.scrollY < 50 ? setIsVisible(true) : setIsVisible(false)
+  })
 
-    window.addEventListener('scroll', e => {
-      window.scrollY < 50 ? setIsVisible(true) : setIsVisible(false)
-    })
+  useEffect(() => {
 
     const containerRefs = document.querySelectorAll('.titleheader .title p')
     containerRefs.forEach(containerRef => {
-
 
 
       if (!containerRef) return
@@ -73,8 +72,7 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
       )}
 
       <div className="spline-wrapper">
-      <Spline scene="/spline/smartphone.splinecode"
-      />
+      <Spline scene="/spline/smartphone.splinecode" />
       </div>
 
         {isVisible ? (
