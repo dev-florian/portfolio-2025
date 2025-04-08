@@ -566,6 +566,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
             version: 1,
           },
         },
+        template: "listing",
         populateBy: 'collection',
         relationTo: 'posts',
       },

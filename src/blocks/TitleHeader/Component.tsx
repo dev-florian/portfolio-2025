@@ -17,15 +17,15 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
   const transition = { duration: 3, yoyo: Infinity, ease: "easeInOut" }
   const [isVisible, setIsVisible] = useState(true)
 
-  window.addEventListener('scroll', e => {
-    if (window.scrollY < 50) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  })
-
   useEffect(() => {
+
+    window.addEventListener('scroll', e => {
+      if (window.scrollY < 50) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    })
 
     const containerRefs = document.querySelectorAll('.titleheader .title p')
     containerRefs.forEach(containerRef => {
