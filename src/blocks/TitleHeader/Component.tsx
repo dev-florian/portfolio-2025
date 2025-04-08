@@ -75,9 +75,9 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
         </div>
       )}
 
-      <div className="spline-wrapper">
-      <Spline scene="/spline/smartphone.splinecode" />
-      </div>
+      {/* <div className="spline-wrapper">
+  <Spline scene="/spline/smartphone.splinecode" />
+</div> */}
 
         {isVisible ? (
           <motion.div

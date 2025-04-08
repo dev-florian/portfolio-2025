@@ -1,0 +1,31 @@
+/* Initial state - before transition starts */
+.page-enter {
+  opacity: 0;
+}
+
+/* State while transition is happening */
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+/* After transition is completed */
+.page-enter-done {
+  opacity: 1;
+}
+
+/* State when transition is exiting */
+.page-exit {
+  opacity: 1;
+}
+
+/* State while exit transition is happening */
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+/* After exit transition is completed */
+.page-exit-done {
+  opacity: 0;
+}
