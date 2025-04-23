@@ -1,10 +1,8 @@
 
 body {
-  padding-right: 50px;
-  padding-left: 50px;
   background-color: #111;
 
-  header{
+  header {
     padding-right: 50px;
     padding-left: 50px;
   }
@@ -82,24 +80,26 @@ body {
   }
 }
 
-header{
+header {
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.titleheader{
+.titleheader {
+  padding-right: 50px;
+  padding-left: 50px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .title .content{
+  .title .content {
     font-size: 7vw;
     line-height: 7vw;
 
-    p{
+    p {
       margin: 0;
     }
   }
@@ -115,13 +115,13 @@ header{
   pointer-events: none;
 }
 
-.scroll-down-btn{
+.scroll-down-btn {
   position: absolute;
   bottom: 50px;
   right: 50px;
   width: max-content;
 
-  &:after{
+  &:after {
     content: "";
     position: absolute;
     left: 0;
@@ -143,10 +143,74 @@ header{
       transition: opacity 0.2s;
     }
 
-    #text{
+    #text {
       font-size: 18px;
     }
   }
+}
 
+.archive-teaser {
+  position: relative;
 
+  .grid {
+    row-gap: 0 !important;
+    column-gap: 0 !important;
+
+    article {
+
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: .5;
+        transition: all .5s;
+        background-color: #000;
+      }
+
+      .prose {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        pointer-events: none;
+        position: absolute;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        opacity: 0;
+        z-index: 2;
+        transition: all .5s;
+
+        h3 {
+
+          font-size: 50px;
+        }
+      }
+
+      &.inactive{
+        opacity: .5;
+        transition: all .5s;
+      }
+
+      &.active {
+
+        &:after{
+          opacity: .25;
+          transition: all .5s;
+        }
+
+        .prose {
+          top: 50%;
+          opacity: 1;
+          transition: all .5s;
+        }
+      }
+    }
+  }
 }

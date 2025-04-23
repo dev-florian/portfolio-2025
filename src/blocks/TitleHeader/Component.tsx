@@ -2,9 +2,9 @@
 
 import type {TitleHeaderBlock as TitleHeaderBlockProps} from 'src/payload-types'
 
-import { motion, animate, stagger, AnimatePresence } from 'framer-motion';
-import { splitText } from "motion-plus-dom"
-import React, { useEffect, useState } from 'react'
+import {motion, animate, stagger, AnimatePresence} from 'framer-motion';
+import {splitText} from "motion-plus-dom"
+import React, {useEffect, useState} from 'react'
 import Spline from '@splinetool/react-spline';
 
 import RichText from "@/components/RichText";
@@ -12,9 +12,9 @@ import RichText from "@/components/RichText";
 type Props = {
   className?: string
 } & TitleHeaderBlockProps
-export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }) => {
+export const TitleHeaderBlock: React.FC<Props> = ({className, title, subTitle}) => {
 
-  const transition = { duration: 3, yoyo: Infinity, ease: "easeInOut" }
+  const transition = {duration: 3, yoyo: Infinity, ease: "easeInOut"}
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
@@ -33,14 +33,14 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
 
       if (!containerRef) return
 
-      const { chars } = splitText(
+      const {chars} = splitText(
         containerRef!
       )
       const staggerDelay = 0.15
 
       animate(
         chars,
-        { y: [-10, 10] },
+        {y: [-10, 10]},
         {
           repeat: Infinity,
           repeatType: "mirror",
@@ -48,12 +48,12 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
           duration: 2,
           delay: stagger(
             staggerDelay,
-            { startDelay: -staggerDelay * 10 }
+            {startDelay: -staggerDelay * 10}
           ),
         }
       )
     })
-    }, [])
+  }, [])
 
   return (
     <div className="titleheader pt-10 pb-10">
@@ -75,33 +75,33 @@ export const TitleHeaderBlock: React.FC<Props> = ({ className, title, subTitle }
         </div>
       )}
 
-      {/* <div className="spline-wrapper">
-  <Spline scene="/spline/smartphone.splinecode" />
-</div> */}
+      <div className="spline-wrapper">
+        <Spline scene="/spline/smartphone.splinecode"/>
+      </div>
 
-        {isVisible ? (
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            key="scroll-btn">
-            <div>
-              <div className="scroll-down-btn">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <motion.path
-                    initial={{pathLength: 0}}
-                    animate={{pathLength: 1}}
-                    transition={transition}
-                    id="circlePath" fill="none" stroke="#ffffff" d="
+      {isVisible ? (
+        <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}
+          key="scroll-btn">
+          <div>
+            <div className="scroll-down-btn">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <motion.path
+                  initial={{pathLength: 0}}
+                  animate={{pathLength: 1}}
+                  transition={transition}
+                  id="circlePath" fill="none" stroke="#ffffff" d="
           M 10, 50
           a 40,40 0 1,1 80,0
           a 40,40 0 1,1 -80,0
         "/>
-                </svg>
-              </div>
+              </svg>
             </div>
-          </motion.div>
-        ) : null}
+          </div>
+        </motion.div>
+      ) : null}
     </div>
   )
 }
