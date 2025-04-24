@@ -93,26 +93,33 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
-  .title .content {
-    font-size: 7vw;
-    line-height: 7vw;
+  .title {
+    margin-top: 50px;
+    pointer-events: none;
+    z-index: 1;
 
-    p {
-      margin: 0;
+    .content {
+      pointer-events: none;
+      font-size: 8vw;
+      line-height: 8vw;
+      text-align: center;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
 
 .spline-wrapper {
-  width: 60vw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  pointer-events: none;
+  z-index: 0;
 }
 
 .scroll-down-btn {

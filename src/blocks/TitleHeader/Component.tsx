@@ -29,7 +29,7 @@ export const TitleHeaderBlock: React.FC<Props> = ({className, title, subTitle}) 
       )}
 
       <div className="spline-wrapper">
-        <Spline scene="/spline/smartphone.splinecode"/>
+        <Spline scene="/spline/background.splinecode"/>
       </div>
 
       <div>
