@@ -28,6 +28,7 @@ export const Card: React.FC<{
   const titleToUse = titleFromProps || title
   const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
   const href = `/${relationTo}/${slug}`
+  const image = doc.heroImage
 
   return (
     <article
@@ -38,8 +39,8 @@ export const Card: React.FC<{
       ref={card.ref}
     >
       <div className="relative w-full ">
-        {!metaImage && <div className="">No image</div>}
-        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
+        {!image && <div className="">No image</div>}
+        {image && typeof image !== 'string' && <Media resource={image} size="33vw" />}
       </div>
       <div className="p-4">
         {showCategories && hasCategories && (
