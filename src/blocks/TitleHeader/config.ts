@@ -5,8 +5,8 @@ export const TitleHeader: Block = {
   slug: 'titleHeader',
   interfaceName: 'TitleHeaderBlock',
   labels: {
-    singular: 'Title header',
-    plural: 'Title headers',
+    singular: 'Entete',
+    plural: 'Entetes',
   },
   fields: [
     {
