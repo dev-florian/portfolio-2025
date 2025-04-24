@@ -8,7 +8,7 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 
-export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title' | 'heroImage'>
+export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title'>
 
 export const Card: React.FC<{
   alignItems?: 'center'
@@ -21,7 +21,7 @@ export const Card: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo, showCategories, title: titleFromProps } = props
 
-  const { slug, categories, meta, title, heroImage } = doc || {}
+  const { slug, categories, meta, title } = doc || {}
   const { description, image: metaImage } = meta || {}
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
@@ -32,14 +32,14 @@ export const Card: React.FC<{
   return (
     <article
       className={cn(
-        'hover:cursor-pointer',
+        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
         className,
       )}
       ref={card.ref}
     >
       <div className="relative w-full ">
-        {!heroImage && <div className="">No image</div>}
-        {heroImage && typeof heroImage !== 'string' && <Media resource={heroImage} size="33vw" />}
+        {!metaImage && <div className="">No image</div>}
+        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
       </div>
       <div className="p-4">
         {showCategories && hasCategories && (

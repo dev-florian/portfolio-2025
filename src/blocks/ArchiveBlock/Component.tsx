@@ -5,13 +5,12 @@ import { getPayload } from 'payload'
 import React from 'react'
 import RichText from '@/components/RichText'
 
-import { CollectionArchive } from '@/components/CollectionArchive'
 import {Teaser} from "@/blocks/ArchiveBlock/template/Teaser";
 
 export const ArchiveBlock: React.FC<
   ArchiveBlockProps & {
-    id?: string
-  }
+  id?: string
+}
 > = async (props) => {
   const { id, categories, template, introContent, limit: limitFromProps, populateBy, selectedDocs } = props
 
@@ -33,12 +32,12 @@ export const ArchiveBlock: React.FC<
       limit,
       ...(flattenedCategories && flattenedCategories.length > 0
         ? {
-            where: {
-              categories: {
-                in: flattenedCategories,
-              },
+          where: {
+            categories: {
+              in: flattenedCategories,
             },
-          }
+          },
+        }
         : {}),
     })
 

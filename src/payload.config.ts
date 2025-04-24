@@ -14,15 +14,9 @@ import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
+import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
-import {
-  BlocksFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
-import { Banner } from './blocks/Banner/config'
-import { Code } from './blocks/Code/config'
-import { TitleHeader } from '@/blocks/TitleHeader/config'
-import { RelatedPosts } from './blocks/RelatedPosts/config'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -65,18 +59,11 @@ export default buildConfig({
     },
   },
   // This config helps us configure global or default features that the other editors can inherit
+  editor: lexicalEditor({}),
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
   collections: [Pages, Posts, Media, Categories, Users],
-  editor: lexicalEditor({
-    features: ({ defaultFeatures, rootFeatures }) => [
-      ...defaultFeatures,
-      BlocksFeature({
-        blocks: [Banner, Code, TitleHeader, RelatedPosts],
-      }),
-    ],
-  }),
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
